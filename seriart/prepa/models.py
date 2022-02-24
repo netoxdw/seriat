@@ -90,7 +90,7 @@ class Alumno (models.Model):
     grupo = models.ForeignKey(Grupo, on_delete=models.CASCADE, 
     null=True, blank=False, related_name='alumno')
     nombre = models.CharField(max_length=30)
-    tipo_moldura = models.CharField(max_length=20,null=True, blank=False, choices=moldura)
+    tipo_moldura = models.IntegerField(null=True, blank=False, choices=moldura)
     tipo_placa = models.CharField(max_length=20,null=True, blank=False, choices=placa, default=1)
     color_placa = models.CharField(max_length=20, null=True, blank=False, choices=colorPlaca,default=1)
     folio = models.CharField(max_length=6, null=True, blank=True)

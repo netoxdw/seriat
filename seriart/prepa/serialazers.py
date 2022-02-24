@@ -17,6 +17,7 @@ class GrupoSerialazer(serializers.ModelSerializer):
         fields = ('id', 'escuela', 'grupo')
 
 class AlumnoSerialazer(serializers.ModelSerializer):
+    grupo = GrupoSerialazer(many= False, read_only=True)
     class Meta:      
         model = Alumno
         fields = ('id', 'grupo', 'nombre', 'get_tipo_moldura_display')
